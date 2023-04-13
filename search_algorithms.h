@@ -1,4 +1,4 @@
-#include <string.h>
+#include "utils.h"
 #ifndef length
 #define length 0
 #endif
@@ -16,10 +16,6 @@ int binary_search(int* arr, int target){
         printf("Now search [%d, %d]. Mid Point: %d\n", i, j, m);
     }
     return target == arr[i] ? i : -1;
-}
-
-void fallback(int* arr){
-    printf("Cannot find algorithm.\n");
 }
 
 void* find_algorithm(char* n){

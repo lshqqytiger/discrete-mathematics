@@ -5,7 +5,7 @@
 
 int main(int argc, char** argv){
     if(argc == 1){
-        printf("Available algorithms: bubble, insertion, heap\n");
+        printf("Available algorithms: bubble, insertion, selection, heap\n");
         return 0;
     }
     int list[length] = { 4, 15, 17, 9, 10, 8, 5, 12, 1, 2, 16, 3, 19, 20, 6, 18, 7, 11, 13, 14 };

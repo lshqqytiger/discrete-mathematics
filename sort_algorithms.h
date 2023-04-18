@@ -6,6 +6,7 @@
 
 #define Bubble "bubble"
 #define Insertion "insertion"
+#define Selection "selection"
 #define Heap "heap"
 #define Quick "quick"
 #define Intro "intro"
@@ -26,6 +27,15 @@ void insertion_sort(int* arr){
         int temp = arr[i];
         for(int k = 0; k < i - j; k++) arr[i - k] = arr[i - k - 1];
         arr[j] = temp;
+        print_array(arr);
+    }
+}
+
+void selection_sort(int* arr){
+    for(int i = 0; i < length - 1; i++){
+        int min = length - 1;
+        for(int j = length - 2; j >= i; j--) if(arr[min] > arr[j]) min = j;
+        swap(&arr[i], &arr[min], sizeof(int));
         print_array(arr);
     }
 }
@@ -53,6 +63,7 @@ void intro_sort(int* arr){
 void* find_algorithm(char* n){
     if(!strcmp(n, Bubble)) return &bubble_sort;
     if(!strcmp(n, Insertion)) return &insertion_sort;
+    if(!strcmp(n, Selection)) return &selection_sort;
     if(!strcmp(n, Heap)) return &heap_sort;
     return &fallback;
 }
